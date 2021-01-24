@@ -1,11 +1,14 @@
 
 import React from "react"
 import './bootstrap.min.css'
-import { FaCoffee } from 'react-icons/fa';
+
+import Navbar from '../components/Navbar';
+
 const Layout = ({ children }) => {
   return (
     <>
-        <h1>hello world <FaCoffee /></h1>
+        <Navbar/>
+        <h1>hello world </h1>
         {children}
     </>
   )
