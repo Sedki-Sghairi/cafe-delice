@@ -1,43 +1,45 @@
 import React from 'react';
 import { FaBars } from 'react-icons/fa';
+import { Link } from 'gatsby';
 import { FaCoffee } from 'react-icons/fa';
-const Navbar = () => {
-	return (
-		<nav className="navbar navbar-expand-lg">
-			<a className="navbar-brand" href="#0">
-				<FaCoffee className="fa-lg mx-2" />café Delice
-			</a>
-			<button
-				className="navbar-toggler"
-				type="button"
-				data-toggle="collapse"
-				data-target="#navbarNav"
-				aria-controls="navbarNav"
-				aria-expanded="false"
-				aria-label="Toggle navigation"
-			>
-				<FaBars className="fa-lg" />
-			</button>
-			<div className="collapse navbar-collapse" id="navbarNav">
-				<div className="mr-auto" />
-				<ul className="navbar-nav">
-					<li className="nav-item active">
-						<a className="nav-link">HOME</a>
-					</li>
-					<li className="nav-item">
-						<a className="nav-link" href="./aboutus.html">
-							ABOUT US
-						</a>
-					</li>
-					<li className="nav-item">
-						<a className="nav-link" href="./service.html">
-							OUR SERVICES
-						</a>
-					</li>
-				</ul>
-			</div>
-		</nav>
-	);
-};
+import { Component } from 'react';
 
-export default Navbar;
+export default class Navbar extends Component {
+	state = {
+		isOpen: false,
+		collapse: 'collapse navbar-collapse'
+	};
+	toggleHandler = () => {};
+	render() {
+		return (
+			<nav className="navbar navbar-expand-md bg-light navbar-light">
+				<Link to="/" className="navbar-brand">
+					café Delice
+				</Link>
+				<FaCoffee className="fa-lg ml-auto mr-2" />
+				<button className="navbar-toggler" type="button" onClick={this.toggleHandler}>
+					<FaBars className="fa-lg" />
+				</button>
+				<div className={this.state.collapse}>
+					<ul className="navbar-nav mx-auto">
+						<li className="nav-item">
+							<Link to="/" className="nav-link">
+								HOME
+							</Link>
+						</li>
+						<li className="nav-item">
+							<Link to="/aboutus" className="nav-link">
+								ABOUT US
+							</Link>
+						</li>
+						<li className="nav-item">
+							<Link to="/services" className="nav-link">
+								OUR SERVICES
+							</Link>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		);
+	}
+}
