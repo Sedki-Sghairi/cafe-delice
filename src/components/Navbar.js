@@ -13,9 +13,9 @@ const Navbar = () => {
 	return (
 		<nav className="navbar navbar-expand-md bg-light navbar-light">
 			<Link to="/" className="navbar-brand">
-				café Delice
+				Café Delice
 			</Link>
-			<FaCoffee className="fa-lg ml-auto mr-2" />
+			<FaCoffee className="fa-lg ml-auto mr-2" style={{ color: '#3e2723', fontSize: '2rem' }} />
 			<button className="navbar-toggler" type="button" onClick={toggleHandler}>
 				<FaBars className="fa-lg" />
 			</button>
