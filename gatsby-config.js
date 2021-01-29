@@ -27,14 +27,5 @@ module.exports = {
 				icon: `src/images/logo.svg` // This path is relative to the root of the site.
 			}
 		}
-	],
-	plugins: [
-		{
-			resolve: `gatsby-source-filesystem`,
-			options: {
-				name: `backgrounds`,
-				path: `${__dirname}/src/bg` // wherever background images are stored
-			}
-		}
 	]
 };
