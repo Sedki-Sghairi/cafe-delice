@@ -8,7 +8,6 @@ const Layout = ({ children }) => {
   return (
     <>
         <Navbar/>
-        <h1>hello world </h1>
         {children}
     </>
   )
